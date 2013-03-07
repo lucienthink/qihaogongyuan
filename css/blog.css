@@ -1,0 +1,196 @@
+h2,h3,p{
+	clear: both; /* 清除左右浮动 */  
+	width: inherit; /* 必须定义宽度 */  
+	word-break: break-word; /* 文本行的任意字内断开 */  
+	word-wrap: break-word; /* IE */  
+	white-space: -moz-pre-wrap; /* Mozilla */ 
+	white-space: -hp-pre-wrap; /* HP printers */ 
+	white-space: -o-pre-wrap; /* Opera 7 */ 
+	white-space: -pre-wrap; /* Opera 4-6 */ 
+	white-space: pre; /* CSS2 */ 
+	white-space: pre-wrap; /* CSS 2.1 */ 
+	white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */
+}
+.body {
+    padding-top: 50px;
+    padding-bottom: 40px;
+    background-image: url(../img/bg.jpg);
+    background-attachment: fixed;
+    background-position: 0 60px;
+}
+.manage_body {
+    padding-top: 42px;
+    padding-bottom: 40px;
+    background-attachment: fixed;
+    word-break:break-all; 
+}
+.inline{
+	padding-top: 5px;
+	display: inline-block;
+	*display: inline; 
+	padding-left: 5px;
+	vertical-align: middle;
+	*zoom: 1;
+}
+textarea{
+	width:97%;
+	height:100%;
+}
+.sidebar-nav {
+padding: 9px 0;
+}
+.blog_fix{
+	overflow: hidden;
+	height: auto;	
+	margin-bottom:0;
+	
+}
+.blog_fix .nav-list{
+	background-color:#E9E8D6;
+	opacity: 0.8;
+	-webkit-border-radius:0 0 4px 4px; 
+	-moz-border-radius:0 0 4px 4px;
+	border-radius:0 0 4px 4px;
+	-webkit-box-shadow:4px 0px 4px rgba(0, 0, 0, 0.065);
+	-moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.065);
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.165);
+}
+.blog_fix .nav li a{
+
+	border: 1px solid #F3F3F3;
+}
+.blog_fix .nav li a:hover{
+	color: #333;
+	text-decoration: none;
+	background-color: #eee;
+}
+
+.row h2{
+	text-align: center;
+	color: #646361;
+}
+.row a{
+	color: #333;
+}
+.row a:hover{
+	color: #333;
+	text-decoration: none;
+}
+.cont{
+	opacity: 0.8;
+	padding-top: 20px;
+	margin-top:20px;
+	margin-right: 10px;
+}
+
+.carousel-caption h4{
+	width: 208px;
+	display: inline-block;
+}
+.content{
+	background-color:#E6E6E6;
+	padding:15px;
+	-webkit-border-radius:4px; 
+	-moz-border-radius:4px;
+	border-radius:4px;
+	-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, .065);
+	-moz-box-shadow:0 1px 4px rgba(0, 0, 0, .065);
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.165);
+}
+.content p{
+	color: #00CD00;
+	font-weight: 600;
+	background-color: #393937;
+	padding:3px 5px;
+	margin:2px;
+	-webkit-border-radius:2px; 
+	-moz-border-radius:2px;
+	border-radius:3px;
+}
+.article_content{
+	background-color:#E6E6E6;
+	padding:15px;
+	margin:0 20px 20px 20px;
+	-webkit-border-radius:4px; 
+	-moz-border-radius:4px;
+	border-radius:4px;
+	-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, .065);
+	-moz-box-shadow:0 1px 4px rgba(0, 0, 0, .065);
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.165);
+}
+.article_content .time{
+	text-align: center;
+}
+.article_content .time span{
+	margin-right: 10px;
+}
+.article_content .butt{
+	display: inline;
+	float:right;
+}
+.page div{
+	margin: 20px;
+	padding: 20px;
+	float: right;
+}
+aside{
+	opacity: 0.8;
+	margin-top: 40px;
+	padding: 10px;
+	background-color: whiteSmoke;	
+}
+aside ul li{
+	list-style: none;
+}
+	
+.navbar-form{
+	margin-top: 5px;
+}
+.navbar-form div{
+	display: inline;
+	margin: 0 5px;
+}
+#sign input,#login{
+	margin: 0 5px;
+}
+#sign #logout{
+	margin-top: 0;
+}
+.row .manage_list{
+	margin-left: 0;
+	height: 100%;
+	-webkit-box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1), 0 1px 10px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1), 0 1px 10px rgba(0, 0, 0, 0.1);
+	box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1), 0 1px 10px rgba(0, 0, 0, 0.1);
+	background-image: -moz-linear-gradient(left, white, #F2F2F2);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(white), to(#F2F2F2));
+	background-image: -webkit-linear-gradient(left, white, #F2F2F2);
+	background-image: -o-linear-gradient(left, white, #F2F2F2);
+	background-image: linear-gradient(to left, white, #F2F2F2);
+	background-repeat: repeat-y;
+}
+.manage_list .nav-list{
+	margin: 0;
+	background-color: transparent;
+}
+.manage_list .nav-list li .branch{
+	background-color: white;
+	padding-left: 45px;
+}
+.manage_list .nav-list li a{
+	padding-left: 30px;
+}
+
+@media (max-width: 979px) {
+	.affix{
+		position: relative;
+	}
+	#myCarousel{
+		display: none;
+	}
+	.body{
+		padding-top: 0;
+	    background-attachment: scroll;
+	    background-position: 0 0;
+	}
+}

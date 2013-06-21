@@ -27,8 +27,7 @@ S.toarticle = function () {
 }
 //开场动画
 S.cartoon = function () {
-	that = this
-	var ct = $('#cartoon'), ch = [], ctt = []
+	var ct = $('#cartoon'), ch = [], ctt = [], that = this
 	for (var i = 0; i < ct.children().length; i++) {
 		ch[i] = ct.children('div:eq('+i+')')
 	}
@@ -42,7 +41,7 @@ S.cartoon = function () {
 }
 //绑定事件
 S.eventBind = function () {
-	that = this
+	var that = this
 	
 	//检测浏览器版本是否过老，显示提示
 	if(this.css3() == false){

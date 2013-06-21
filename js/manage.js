@@ -1,5 +1,5 @@
 function Manage(){
-	this.url = 'http://1.lucienfeel.sinaapp.com/';
+	this.url = 'http://2.lucienfeel.sinaapp.com/';
 	this.url +='?';
 	this.logged
 	this.m = '';
@@ -231,8 +231,8 @@ var M = Manage.prototype;
 				      	items +='<div class="article_content"><h3>抱歉，此目录内暂时没有文章</h3></div>'
 				    }else{		
 				      	while(json[i]){
-					      	plus = '<div class="btn-group butt"><a class="btn" href="article_edit.html?i='+json[i]["id"]+'">Edit</a><a class="btn" href="../article.html?i='+json[i]["id"]+'">View</a><button class="btn del" id="'+json[i]["id"]+'">Delete</button></div>'
-						    items += '<div><h3><a href="article_edit.html?i='+json[i]["id"]+'">'+ json[i]["title"] + '</a></h2><div><span>PubTime:'+json[i]["pubtime"]+' </span>'+plus+'</div><hr></div>'
+					      	plus = '<div class="btn-group butt"><a class="btn" href="http://lucienthink.sinaapp.com/wp-admin/post.php?action=edit&post='+json[i]["id"]+'">Edit</a><a class="btn" href="../article.html?i='+json[i]["id"]+'">View</a><button class="btn del" id="'+json[i]["id"]+'">Delete</button></div>'
+						    items += '<div><h3><a href="http://lucienthink.sinaapp.com/wp-admin/post.php?action=edit&post='+json[i]["id"]+'">'+ json[i]["title"] + '</a></h2><div><span>PubTime:'+json[i]["pubtime"]+' </span>'+plus+'</div><hr></div>'
 					    	i++
 				      	}
 				    }

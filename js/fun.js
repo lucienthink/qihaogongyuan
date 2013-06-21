@@ -5,7 +5,7 @@ function object(o){
 }
 //继承函数，第一个参数为子类，第二个参数为超类
 function inherit(a,b){
-	var prototype = object(b.prototype);
+	var prototype = Object.create?Object.create(b.prototype):object(b.prototype);
 	prototype.constructor = a;
 	a.prototype = prototype;
 }
@@ -13,15 +13,15 @@ function Fun(){};
 Fun.prototype = {
 	//判断是否为移动客户端
 	mobile: function () {
-		var sUserAgent= navigator.userAgent.toLowerCase(); 
-	    var bIsIpad= sUserAgent.match(/ipad/i) == "ipad"
-	    var bIsIphoneOs= sUserAgent.match(/iphone os/i) == "iphone os" 
-	    var bIsMidp= sUserAgent.match(/midp/i) == "midp"
-	    var bIsUc7= sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4" 
-	    var bIsUc= sUserAgent.match(/ucweb/i) == "ucweb"
-	    var bIsAndroid= sUserAgent.match(/android/i) == "android"
-	    var bIsCE= sUserAgent.match(/windows ce/i) == "windows ce"
-	    var bIsWM= sUserAgent.match(/windows mobile/i) == "windows mobile"
+		var sUserAgent= navigator.userAgent.toLowerCase()
+	    ,bIsIpad= sUserAgent.match(/ipad/i) == "ipad"
+	    ,bIsIphoneOs= sUserAgent.match(/iphone os/i) == "iphone os" 
+	    ,bIsMidp= sUserAgent.match(/midp/i) == "midp"
+	    ,bIsUc7= sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4" 
+	    ,bIsUc= sUserAgent.match(/ucweb/i) == "ucweb"
+	    ,bIsAndroid= sUserAgent.match(/android/i) == "android"
+	    ,bIsCE= sUserAgent.match(/windows ce/i) == "windows ce"
+	    ,bIsWM= sUserAgent.match(/windows mobile/i) == "windows mobile"
 	    if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) { 
 	    	return 'mobile'
 	    } else { 
@@ -152,8 +152,8 @@ Fun.prototype = {
 	}
 	//淡出,传入div必须为数组，允许多个框架依次执行淡出效果
 	,fadeout: function (div) {
-		that = this
-		var f = 0, i = 0
+		
+		var f = 0, i = 0, that = this
 		div[i].css('display','block')
 		fn = function(){
 			if(f == 1) return 0
@@ -173,8 +173,7 @@ Fun.prototype = {
 	}
 	//淡入,传入div必须为数组，允许多个框架依次执行淡入效果
 	,fadein: function (div) {
-		that = this
-		var f = 1, i = 0
+		var f = 1, i = 0, that = this
 		fn = function(){
 			f -= 0.05
 			that.opacity(div[i],f)
@@ -194,8 +193,7 @@ Fun.prototype = {
 	}
 	//淡出淡入,传入div必须为数组，允许多个框架依次执行淡出淡入效果
 	,fade: function (div) {
-		that = this
-		var f = 0, b = 0 , i = 0
+		var f = 0, b = 0 , i = 0, that = this
 		div[i].css('display','inline')
 		fn = function(){		
 			if(b == 0){
@@ -258,8 +256,9 @@ Fun.prototype = {
 		return null
 	}
 	//特殊字符过滤
-	,encode: function (s) {
-		var REGX_HTML_ENCODE = /"|&|'|<|>|[\x00-\x20]|[\x7F-\xFF]|[\u0100-\u2700]/g
+	,encode: function (str) {
+		var s = str.replace(/\n|\r|(\r\n)|(\u0085)|(\u2028)|(\u2029)/g, '<br>')
+		,REGX_HTML_ENCODE = /"|&|'|<|>|[\x00-\x20]|[\x7F-\xFF]|[\u0100-\u2700]/g
       		return (typeof s != "string") ? s :s.replace(REGX_HTML_ENCODE,
 	                    function($0){
 	                        var c = $0.charCodeAt(0), r = "&#"
@@ -273,11 +272,11 @@ Fun.prototype = {
 		$.getJSON(url+'m=lc&c='+c,function(json){
 			if('Not Logged' != json){
 				var logged = true
-				fun(url,m,c,logged,json)
+				fun(url,m,c,logged)
 			}
 			else{
 				var logged = false
-				fun(url,m,c,logged,json)
+				fun(url,m,c,logged)
 			}
 		})
 	}
